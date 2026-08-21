@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  /* Xanh dương pastel - màu chủ đạo */
+  --color-sky-50: #f3f8fd;
+  --color-sky-100: #e6f0fb;
+  --color-sky-200: #cde3f6;
+  --color-sky-300: #a8cdef;
+  --color-sky-400: #7da6e0;
+  --color-sky-500: #5a87cc;
+  --color-sky-600: #4369ac;
+  --color-sky-700: #37548a;
+  --color-sky-800: #2f4670;
+  --color-sky-900: #2a3c5d;
+
+  /* Màu nổi bật (accent) - cam đào ấm, tương phản tốt với xanh pastel */
+  --color-glow-50: #fff5ed;
+  --color-glow-100: #ffe8d5;
+  --color-glow-200: #ffceaa;
+  --color-glow-300: #ffab6e;
+  --color-glow-400: #ff8a3d;
+  --color-glow-500: #f96f1f;
+  --color-glow-600: #e05412;
+  --color-glow-700: #b93f10;
+  --color-glow-800: #953315;
+  --color-glow-900: #792c14;
+
+  /* Trạng thái */
+  --color-success-500: #3fb27f;
+  --color-success-600: #1f7a4f;
+  --color-danger-500: #e0555a;
+  --color-danger-600: #c23d42;
+
+  --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sky-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+/* Ẩn scrollbar cho thanh cuộn ngang trang chủ nhưng vẫn cuộn được */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.animate-pop {
+  animation: pop 0.28s ease-out;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(249, 111, 31, 0.45); }
+  100% { box-shadow: 0 0 0 12px rgba(249, 111, 31, 0); }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.6s ease-out infinite;
+}
